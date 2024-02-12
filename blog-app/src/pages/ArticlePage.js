@@ -11,7 +11,7 @@ const ArticlePage = () => {
     const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
     const { articleId } = useParams();
 
-    const { user, isLoading } = useUser();
+    const { user } = useUser();
 
     useEffect(() => {
         const loadArticleInfo = async () => {
@@ -21,7 +21,7 @@ const ArticlePage = () => {
         }
 
         loadArticleInfo();
-    }, []);
+    }, [articleId]);
 
     const article = articles.find(article => article.name === articleId);
 

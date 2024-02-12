@@ -8,7 +8,7 @@ import useUser from '../hooks/useUser';
 import articles from './article-content';
 
 const ArticlePage = () => {
-    const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [], canUpvote: false });
+    const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [], canUpvote: true });
     const { canUpvote } = articleInfo;
     const { articleId } = useParams();
 
@@ -23,7 +23,7 @@ const ArticlePage = () => {
             setArticleInfo(newArticleInfo);
         }
 
-        if (isLoading) {
+        if (!isLoading) {
             loadArticleInfo();
         }
     }, [isLoading, user]);

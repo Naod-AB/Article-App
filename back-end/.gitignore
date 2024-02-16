@@ -2,3 +2,4 @@ node_modules
 credentials.json
 prod-env.yaml
 .env
+build

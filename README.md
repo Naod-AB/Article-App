@@ -1,4 +1,3 @@
-#A MERN project 
 
 ## An article APP
 

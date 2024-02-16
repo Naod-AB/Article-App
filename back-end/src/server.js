@@ -72,7 +72,7 @@ app.put('/api/articles/:name/upvote', async (req, res) => {
     if (article) {
         const upvoteIds = article.upvoteIds || [];
         const canUpvote = uid && !upvoteIds.includes(uid);
-   
+
         if (canUpvote) {
             await db.collection('articles').updateOne({ name }, {
                 $inc: { upvotes: 1 },
